@@ -1,0 +1,1 @@
+This the repository for Java Scripts to customize Microsoft Dynamics CRM 2013.
