@@ -1,0 +1,23 @@
+function CalculateFPL(monthlyTotalIncomeField, householdSizeField){
+if (Xrm.Page.getAttribute(monthlyTotalIncomeField).getValue() != null && Xrm.Page.getAttribute(householdSizeField).getValue() !=null) {
+var incomeMonthly = Xrm.Page.getAttribute(monthlyTotalIncomeField).getValue();
+var householdSize = Xrm.Page.getAttribute(householdSizeField).getValue();
+var fpl100 = 11670;
+var fpladditional = 4060;
+
+var fpl = (incomeMonthly * 12 ) / (fpl100 - fpladditional + (fpladditional * householdSize)) * 100;
+var incomeYearly = incomeMonthly * 12;
+
+Xrm.Page.getAttribute("ll_fpl").setSubmitMode("always");
+Xrm.Page.getAttribute("ll_fpl").setValue(fpl);
+Xrm.Page.getAttribute("ll_yearlyhouseholdincome").setSubmitMode("always");
+Xrm.Page.getAttribute("ll_yearlyhouseholdincome").setValue(incomeYearly);
+}
+}
+
+
+
+
+//"llaa_monthlytotalincome", "llaa_householdsize"
+
+
