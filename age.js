@@ -7,7 +7,7 @@ Today.setHours(0, 0, 0, 0);
 var age = 0;
 if(DOB >= Today )
 {
-Xrm.Page.ui.controls.get(llaa_dateofbirth).setNotification("Please enter a valid date of birth")
+Xrm.Page.ui.controls.get("llaa_dateofbirth").setNotification("Please enter a valid date of birth")
 }
 else
 {
@@ -17,9 +17,12 @@ age = Today.getFullYear() - DOB.getFullYear();
 	else {
 	age = Today.getFullYear() - DOB.getFullYear() - 1;
 	}
+	Xrm.Page.ui.controls.get("llaa_dateofbirth").clearNotification()
 }
 Xrm.Page.getAttribute("ll_age").setSubmitMode("always");
 Xrm.Page.getAttribute("ll_age").setValue(age);
+
+}
 }
 
 
