@@ -9,7 +9,7 @@ if( !IsNull(context)) {
 			
 		ssnField.controls.forEach(function (control) {
 			if (scrubbed.length != 9) {
-			control.setNotification("Enter a Valid Social Security Number");
+			control.setNotification("Enter a Valid Social Security Number. If there no Social Security Number enter 999-99-9999.");
 		} 
 			else if (ssnFormat.test(scrubbed)) {
 			ssn = scrubbed.replace(ssnFormat, "$1-$2-$3"); 
